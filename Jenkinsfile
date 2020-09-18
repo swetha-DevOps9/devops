@@ -4,7 +4,7 @@ pipeline{
      stage('Build'){
          steps{
              echo 'first build thru docker file'
-	     sh 'docker build -t prime1.0 .'
+	     sh 'sudo docker build -t prime1.0 .'
 			 
          }
      }
