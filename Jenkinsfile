@@ -3,8 +3,9 @@ pipeline{
  stages{
      stage('Build'){
          steps{
-             echo 'first build'
-			 sh 'python testfile2.py'
+             echo 'first build thru docker file'
+	     sh 'docker build -t prime1.0 .'
+			 
          }
      }
      stage('Test'){
