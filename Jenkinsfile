@@ -4,7 +4,9 @@ pipeline{
      stage('Build'){
          steps{
              echo 'first build thru docker file'
-	     sh 'sudo docker build -t prime1.0 .'
+	     def workspace = pwd()
+	     sh 'echo ${workspace}'
+	     sh 'docker build -t prime1.0 .'
 			 
          }
      }
