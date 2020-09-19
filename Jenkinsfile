@@ -1,15 +1,14 @@
 pipeline{
-	agent{
-	    dockerfile{
-		    filename 'Dockerfile.test'
-		      }
-	     }
+	agent any 
  stages{
      stage('Build'){
          steps{
 		 script{
 	               def workspace = pwd()
 	               }
+		 dockerfile{
+		    filename 'Dockerfile.test'
+		      }
 		 echo 'first build thru docker file'
 	         sh "echo ${workspace}"
 		 sh "chmod 777 ${workspace}"
