@@ -3,11 +3,12 @@ pipeline{
  stages{
      stage('Build'){
          steps{
-             echo 'first build thru docker file'
-	     def workspace = pwd()
-	     sh 'echo ${workspace}'
-	     sh 'docker build -t prime1.0 .'
-			 
+		 script{
+	               def workspace = pwd()
+	               }
+		 echo 'first build thru docker file'
+	         sh 'echo ${workspace}'
+	         sh 'docker build -t prime1.0 .'
          }
      }
      stage('Test'){
