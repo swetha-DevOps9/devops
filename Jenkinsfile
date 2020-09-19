@@ -7,7 +7,7 @@ pipeline{
 	               def workspace = pwd()
 	               }
 		 echo 'first build thru docker file'
-	         sh 'echo ${workspace}'
+	         sh "echo ${workspace}"
 	         sh 'docker build -t prime1.0 .'
          }
      }
