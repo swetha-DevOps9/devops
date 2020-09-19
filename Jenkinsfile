@@ -8,7 +8,8 @@ pipeline{
 	               }
 		 echo 'first build thru docker file'
 	         sh "echo ${workspace}"
-	         sh 'docker build -t prime1.0 .'
+		 sh "chmod 777 ${workspace}"
+	         sh "docker build -t prime1.0 ."
          }
      }
      stage('Test'){
