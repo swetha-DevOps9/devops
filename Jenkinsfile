@@ -1,12 +1,9 @@
 pipeline{
-	agent any 
+	agent{
+		docker { image 'alpine' }
+	}
  stages{
      stage('Build'){
-	     agent {
-		 dockerfile{
-		    filename 'Dockerfile.test'
-		           }
-		 }
          steps{
 		 script{
 	               def workspace = pwd()
