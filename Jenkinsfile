@@ -6,9 +6,11 @@ pipeline{
 		 script{
 	               def workspace = pwd()
 	               }
+		 agent {
 		 dockerfile{
 		    filename 'Dockerfile.test'
-		      }
+		           }
+		 }
 		 echo 'first build thru docker file'
 	         sh "echo ${workspace}"
 		 sh "chmod 777 ${workspace}"
