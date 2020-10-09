@@ -1,7 +1,5 @@
 pipeline{
-	agent{
-		docker { image 'alpine' }
-	}
+	agent any
  stages{
      stage('Build'){
          steps{
@@ -11,11 +9,11 @@ pipeline{
 		 echo 'first build thru docker file'
 	         sh "echo ${workspace}"
 		 sh "chmod 777 ${workspace}"
-	         /*sh "docker build -t prime1.0 ."*/
+	         sh "docker build -t image1.0 ."
 		 sh 'docker images'
 		 sh 'docker ps -a'
 		 sh 'docker ps'
-		 sh 'docker run prime1.0'
+		 sh 'docker run image1.0'
          }
      }
      stage('Test'){
